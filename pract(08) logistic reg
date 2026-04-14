@@ -1,0 +1,11 @@
+#logistic reg
+
+x<-c(1,2,3,4,5,6)
+y<-c(0,0,0,1,1,1)
+
+model<-glm(y~x,family=binomial)
+summary(model)
+predict(model)
+
+plot(x,y)
+lines(x,fitted(model))
