@@ -1,0 +1,23 @@
+#small sample
+#one sample 
+x<-c(1,2,3,4,5)
+t.test(x)
+
+# two sample
+group1 <- c(12, 14, 15, 16, 18)
+group2 <- c(10, 11, 13, 12, 14)
+t.test(group1, group2)
+
+# paired sample
+before <- c(50, 55, 60, 65, 70)
+after  <- c(52, 58, 63, 68, 75)
+t.test(before, after, paired = TRUE)
+
+#large sample
+x <- c(10, 12, 14, 16, 18, 20, 22, 24, 26, 28)
+
+mu0 <- 15
+sigma <- 5
+
+z <- (mean(x) - mu0) / (sigma / sqrt(length(x)))
+z
