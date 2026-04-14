@@ -1,0 +1,23 @@
+# Data
+x <- c(1,2,3,4,5)
+y <- c(10,20,30,35,50)
+
+# LSE
+model1 <- lm(y ~ x)
+print(coef(model1))
+
+# MLE (FIXED)
+library(stats4)
+
+mle_model <- mle(function(beta0, beta1, sigma){
+  
+  mu <- beta0 + beta1 * x
+  
+  -sum(dnorm(y,
+             mean = mu,
+             sd = sigma,
+             log = TRUE))
+  
+},
+start = list(beta0 = 0, beta1 = 10, sigma = 5))
+print(coef(mle_model))
